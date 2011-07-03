@@ -1,7 +1,7 @@
 <?php
 function is_chrome()
 {
-	return(eregi("chrome", $_SERVER['HTTP_USER_AGENT']));
+	return(eregi("chrome", $_SERVER['HTTP_USER_AGENT']) OR eregi("safari", $_SERVER['HTTP_USER_AGENT']));
 }
 ?> 
 
