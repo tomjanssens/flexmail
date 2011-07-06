@@ -1,7 +1,7 @@
 Flex Mail
 =============
 
-Flexbox powered proof-of-concept of Gmail's new look.
+Flexbox powered proof-of-concept of Gmail's new look!
 
 Features
 --------
