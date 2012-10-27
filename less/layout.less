@@ -1,33 +1,7 @@
-/*
- * This stylesheet uses LESS - The Dynamic Stylesheet Language
- * Source: http://lesscss.org/
-*/
+@import "../libraries/bootstrap/less/bootstrap.less";
 
-/* @group LESS */
-@orange: #DD4B39;
-
-.flexbox(@flex: 0, @orient: horizontal) {
-	display: -webkit-box;
-	-webkit-box-flex: @flex;
-	-webkit-box-orient: @orient;
-	
-	display: -moz-box;
-	-moz-box-flex: @flex;
-	-moz-box-orient: @orient;
-}
-
-.gradient(@start-color, @end-color) {
-	background-color: @end-color;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@start-color), to(@end-color));
-	background-image: -moz-linear-gradient(0% 0% 270deg,@start-color, @end-color);	
-}
-
-.shadow(@shadow) {
-	-webkit-box-shadow: @shadow;
-	-moz-box-shadow: @shadow;
-	box-shadow: @shadow;
-}
-/* @end group */
+@import "flexbox.less";
+@import "variables.less";
 
 /* @group General */
 body {
@@ -40,10 +14,10 @@ body {
 
 html, body { 
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
 
-body { .flexbox(0, vertical); }
+html, body { #flexbox .box(column, 1); }
 
 ul { padding: 0; margin: 0; list-style: none; }
 
@@ -59,35 +33,35 @@ a[role="button"] {
 	font-weight: bold;
 	border-radius: 2px;
 	border: 1px solid #D9D9D9;
-	.gradient(#F5F5F5,#F1F1F1);
+	#gradient .vertical(#F5F5F5,#F1F1F1);
 }
 
 a[role="button"]:hover {	
 	color: #333;
 	border: 1px solid #939393;
-	.shadow(0 1px 1px rgba(0,0,0,0.1));
+	.box-shadow(0 1px 1px rgba(0,0,0,0.1));
 }
 
-a[role="button"].blue {
+a[role="button"].blue {	
 	color: white;		
 	border: 1px solid #40796D;
 	margin: 0 10px 0 15px;
-	.gradient(#4D90FE,#4787ED);
+	#gradient .vertical(@blue,darken(@blue, 10%));
 }
 a[role="button"].blue:hover {	
 	border: 1px solid #2F5BB7;
-	.gradient(#4D90FE,#357AE8);
+	#gradient .vertical(@blue,darken(@blue, 20%));
 }
 /* @end group */
 
 /* @group Layout */
 #menu {
-	.flexbox();
+	#flexbox .box(row, 0);
 	background-color: #565656;
 	border-bottom: 1px solid #CCC;
 	
 	ul {
-		.flexbox();
+		#flexbox .box(row, 0);
 		
 		li {			
 			a 			{ padding: 7px 10px; font-weight: bold; border-top: 2px solid #565656; }
@@ -100,12 +74,12 @@ a[role="button"].blue:hover {
 }
 
 #header {
-	.flexbox();
+	#flexbox .box();
 	height: 30px;
 	padding: 22px 0 22px 200px;
 	background-color: #F1F1F1;
 	border-bottom: 1px solid #E4E4E4;
-	.shadow(0 2px 2px -1px rgba(0,0,0,0.1));
+	.box-shadow(0 2px 2px -1px rgba(0,0,0,0.1));
 	
 	input {
 		font-size: 14px;
@@ -122,13 +96,14 @@ a[role="button"].blue:hover {
 }
 
 #frame {
-	.flexbox(1, horizontal);
+	#flexbox .box(row, 1);
+	min-height: 100%;
 	
 	#sidebar {
-		.flexbox(0, vertical);
+		#flexbox .box(column, 0, scrollable);
+		max-height: 100%;
 		width: 180px;
 		padding: 5px 0 0 20px;
-		overflow-y: scroll;
 		
 		ul {
 			margin-top: 15px;
@@ -144,16 +119,17 @@ a[role="button"].blue:hover {
 	}
 	
 	#content {
-		.flexbox(1, vertical);
+		#flexbox .box(column, 1);
 		background-color: #FFF;
 		border-left: 1px solid #E4E4E4;
+		min-height: 100%;
 		
 		div#toolbar {
 			padding: 15px;
-			.shadow(0 2px 2px -1px rgba(0,0,0,0.2));
+			.box-shadow(0 2px 2px -1px rgba(0,0,0,0.2));
 		
 			ul {
-				.flexbox(1, horizontal);
+				#flexbox .box(row, 1);
 				
 				li {					
 					a {				
@@ -182,14 +158,14 @@ a[role="button"].blue:hover {
 		}
 		
 		#table {
-			.flexbox(1, vertical);
+			#flexbox .box(column, 1);
 			background-color: rgba(0,0,0,0.05);
+			min-height: 100%;
 			
 			.inner {
-				.flexbox(1, vertical);
-				padding: 0 0 0 0;
-				
-				overflow-y: scroll;				
+				#flexbox .box(column, 1, scrollable);
+				min-height: 100%;
+				padding: 0 0 0 0;			
 			
 				table {
 					width: 100%;
