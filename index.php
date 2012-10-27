@@ -12,7 +12,7 @@ function is_chrome()
 		<meta charset="utf-8" />
 		
 		<link rel="stylesheet/less" type="text/css" href="less/layout.less">
-		<script type="text/javascript" src="js/less-1.1.3.min.js"></script>
+		<script type="text/javascript" src="libraries/less/dist/less-1.3.1.min.js"></script>
 		<script type="text/javascript" src="js/mootools.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 	</head>
