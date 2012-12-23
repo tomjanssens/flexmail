@@ -27,17 +27,17 @@ function is_chrome()
 		</div>
 		<div id="header">
 			<input type="text" name="search" />
-			<a role="button" class="blue" href="#">Search mail and docs</a>
-			<a role="button" href="#">Search the web</a>
+			<a class="btn btn-primary" href="#">Search mail and docs</a>
+			<a class="btn" href="#">Search the web</a>
 		</div>
 		<div id="frame">
 			<div id="sidebar">
-				<ul>
+				<ul class="nav nav-list">
 					<li><a class="active" href="#">Mail</a></li>
 					<li><a href="#">Contacts</a></li>
 					<li><a href="#">Tasks</a></li>
 				</ul>
-				<ul>
+				<ul class="nav nav-list">
 					<li><a class="active" href="#">Priority Inbox</a></li>
 					<li><a href="#">Inbox</a></li>
 					<li><a href="#">Starred</a></li>
@@ -49,7 +49,7 @@ function is_chrome()
 					<li><a href="#">Spam</a></li>
 					<li><a href="#">Trash</a></li>
 				</ul>
-				<ul>
+				<ul class="nav nav-list">
 					<li><a href="#">Cars</a></li>
 					<li><a href="#">Events</a></li>
 					<li><a href="#">Marketing</a></li>
@@ -60,15 +60,16 @@ function is_chrome()
 			</div>
 			<div id="content">
 				<div id="toolbar">
-					<ul>
-						<li><a role="button" href="#">Archive</a></li>
-						<li><a role="button" href="#">Spam</a></li>
-						<li><a role="button" href="#">Delete</a></li>
-						<li><a role="button" href="#">Mark as read</a></li>
-						<li class="divider"></li>
-						<li><a role="button" href="#">Move to</a></li>
-						<li><a role="button" href="#">Labels</a></li>
-					</ul>
+					<div class="btn-group">
+						<a class="btn" href="#">Archive</a>
+						<a class="btn" href="#">Spam</a>
+						<a class="btn" href="#">Delete</a>
+						<a class="btn" href="#">Mark as read</a>
+					</div>
+					<div class="btn-group">
+						<a class="btn" href="#">Move to</a>
+						<a class="btn" href="#">Labels</a>
+					</div>
 				</div>
 				<div id="table">
 					<div class="inner">

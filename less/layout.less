@@ -3,6 +3,10 @@
 @import "flexbox.less";
 @import "variables.less";
 
+.btn {
+
+}
+
 /* @group General */
 body {
 	margin: 0; padding: 0;
@@ -109,7 +113,7 @@ a[role="button"].blue:hover {
 			margin-top: 15px;
 			
 			li {
-				a    		{ padding: 5px 10px 5px 30px; margin-right: 4px; }
+				a    		{ margin-right: 4px; }
 				a:link    	{ }
 				a:visited 	{ }
 				a:hover   	{ background-color: #EEE; }
@@ -127,34 +131,8 @@ a[role="button"].blue:hover {
 		div#toolbar {
 			padding: 15px;
 			.box-shadow(0 2px 2px -1px rgba(0,0,0,0.2));
-		
-			ul {
-				#flexbox .box(row, 1);
-				
-				li {					
-					a {				
-						padding-left: 13px;
-						border-radius: 0;
-						border-left: 0 none;
-					}
-					
-					a:hover {	
-						padding-left: 12px;
-						border: 1px solid #939393 !important;
-					}
-				}
-				
-				li:first-of-type a,
-				li.divider + li a { border-left: 1px solid #D9D9D9; border-radius: 2px 0 0 2px; }
-				
-				li:first-of-type a:hover,
-				li.divider + li a:hover { padding-left: 13px;	}
-				
-				li:last-of-type a,
-				li.last a { border-radius: 0 2px 2px 0; }
-				
-				li.divider { padding: 5px; }
-			}
+			
+			#flexbox .box(row, 0);
 		}
 		
 		#table {
